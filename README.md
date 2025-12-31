@@ -65,9 +65,6 @@ This project strongly emphasizes **OODP principles**, including:
 - **Modular Design** – Separate controllers, models, views, and utilities  
 
 ---
-
-## 📁 Project Structure
-
 ## 📁 Project Structure
 
 ```text
