@@ -1,0 +1,16 @@
+CSE 2107;ASSIGNMENT NA DILE MARBO;Assignment;2025-07-30
+CSE 2109;CT-2 on Counting;CT;2025-08-01
+CSE 2101;Assignment on DP;Assignment;2025-08-01
+CSE 2101;Assignment on DSA-heaps;Assignment;2025-08-08
+CSE 2101;ABCD;Lab Report;2025-07-31
+CSE 2101;ABCD;Lab Report;2025-07-31
+CSE 2107;CT-2;CT;2025-08-01
+CSE 69;Assignment-1;Assignment;2025-07-31
+CSE 69;Assignment-1;Assignment;2025-07-31
+CSE 69;Assignment;Assignment;2025-07-30
+CSE 69;CT;CT;2025-08-09
+CSE 2103;Project Report;Lab Report;2025-12-27
+CSE 2103;Assignment;Lab Report;2025-12-10
+CSE 420;OOP Lab Report;Lab Report;2025-11-30
+CSE 420;OOP Project report;Lab Report;2025-11-30
+CSE 420;Assignment;Assignment;2025-12-10

@@ -1,0 +1,18 @@
+CSE 1201,Structural Programming Language,3.00
+CSE 1202,Structural Programming Language Lab,1.50
+CSE 1101,Discreet Mathematics,3.00
+CSE 2109,Datacom,3.00
+CSE 2101,Data Structure and Algorithms,3.00
+CSE 2103,Object Oriented Programming,3.00
+CSE,2105,CAM,3.00
+CSE 2106, CAM Lab,1.5
+CSE 2107 MATH,3.00
+CSE 420,Introduction to Youtubing,3.00
+CSE 69,Introduction to FAANG,0.69
+CSE 100,From SpiderMan to IronMan,10.0
+EEE 1205,DLD,3.00
+EEE 1206,DLD,1.5
+2106,OOP Lab,1.50
+CSE2203,DBMS,3.00,Database Management System
+2202,DBMS,3.00,Database and Management System for 2nd year 2nd semester course.
+CSE2203,DBMS,3.00
