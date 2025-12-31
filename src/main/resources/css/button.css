@@ -1,0 +1,69 @@
+/* ===== Base Button ===== */
+.button {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-cursor: hand;
+    -fx-padding: 8 18;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.18), 5, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.20);
+}
+
+.button:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.30);
+}
+
+/* ===== Primary Button (Highlight) ===== */
+.button-primary {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent;
+}
+
+.button-primary:hover {
+    -fx-background-color: #27ae60;
+}
+
+.button-primary:pressed {
+    -fx-background-color: #219150;
+}
+
+/* ===== Neutral Button ===== */
+.button-neutral {
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255,255,255,0.15);
+}
+
+.button-neutral:hover {
+    -fx-background-color: rgba(255,255,255,0.18);
+}
+
+/* ===== Back Button (Top Bar) ===== */
+.back-button {
+    -fx-background-color: white;
+    -fx-text-fill: #3572EF;
+    -fx-font-weight: bold;
+    -fx-padding: 6 16;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: rgba(0,0,0,0.08);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 6, 0.2, 0, 2);
+}
+
+.back-button:hover {
+    -fx-background-color: #f3f6ff;
+}
+
+.back-button:pressed {
+    -fx-background-color: #e8eeff;
+}

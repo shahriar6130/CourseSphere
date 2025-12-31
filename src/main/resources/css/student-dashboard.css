@@ -1,0 +1,168 @@
+/* ================= ROOT ================= */
+.root,
+.border-pane {
+    -fx-font-family: "System";
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        #6a11cb,
+        #2575fc
+    );
+}
+
+/* ================= TOP BAR ================= */
+.topbar {
+    -fx-background-color: rgba(0, 0, 0, 0.25);
+}
+
+.topbar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.topbar-subtitle {
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 13px;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-background-radius: 16;
+    -fx-background-insets: 0;
+    -fx-padding: 18;
+}
+
+.sidebar-title {
+    -fx-fill: white; /* Text node */
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+/* Sidebar buttons */
+.sidebar-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.22);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(255,255,255,0.4);
+    -fx-cursor: hand;
+    -fx-padding: 10 14;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.35);
+}
+
+.sidebar-btn:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.45);
+}
+
+.sidebar-btn:focused {
+    -fx-border-color: rgba(255,255,255,0.85);
+    -fx-border-width: 1.5;
+}
+
+/* Logout danger */
+.sidebar-btn.danger {
+    -fx-background-color: rgba(231, 76, 60, 0.85);
+    -fx-border-color: rgba(255,255,255,0.25);
+}
+
+.sidebar-btn.danger:hover {
+    -fx-background-color: rgba(192, 57, 43, 0.95);
+}
+
+.sidebar-btn.danger:pressed {
+    -fx-background-color: rgba(165, 42, 42, 0.98);
+}
+
+/* ================= CONTENT ================= */
+.content {
+    -fx-background-color: transparent;
+}
+
+/* ================= CARD ================= */
+.card {
+    -fx-background-color: rgba(255,255,255,0.96);
+    -fx-background-radius: 18;
+    -fx-background-insets: 0;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 14, 0.3, 0, 4);
+}
+
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.card-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+.card-muted {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* ================= AVATAR ================= */
+.avatar {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.9);
+    -fx-border-width: 2;
+}
+
+/* ================= BUTTONS ================= */
+.primary-btn {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-padding: 10 16;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #27ae60;
+}
+
+.primary-btn:pressed {
+    -fx-background-color: #219150;
+}
+
+/* Quick actions */
+.quick-btn {
+    -fx-background-color: rgba(255,255,255,0.95);
+    -fx-text-fill: #2c3e50;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.35);
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 10 16;
+}
+
+.quick-btn:hover {
+    -fx-background-color: rgba(255,255,255,1);
+}
+
+.quick-btn:pressed {
+    -fx-background-color: rgba(240,240,240,1);
+}
+
+/* ================= BANNER ================= */
+.banner {
+    -fx-background-color: rgba(255,255,255,0.95);
+    -fx-background-radius: 18;
+    -fx-background-insets: 0;
+    -fx-padding: 18;
+}
+
+.banner-text {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 13px;
+}

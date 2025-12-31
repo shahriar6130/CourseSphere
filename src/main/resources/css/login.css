@@ -1,0 +1,183 @@
+/* ==============================
+   ROOT
+   ============================== */
+#loginStackPane {
+    -fx-pref-width: 1200;
+    -fx-pref-height: 750;
+}
+
+/* Background fills the entire screen */
+.login-bg {
+    -fx-background-image: url("../login.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* Optional dark overlay for readability (put above bg if you want)
+   If you don't have an overlay Region in FXML, ignore this. */
+.login-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* ==============================
+   CARD
+   ============================== */
+.login-card {
+    -fx-background-color: rgba(18, 20, 28, 0.86);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-width: 1;
+
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.55),
+            22, 0.25, 0, 10);
+}
+
+.login-title {
+    -fx-font-family: "System";
+    -fx-font-size: 22px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #eef3ff;
+    -fx-alignment: center;
+
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.45),
+            2, 0.20, 0, 2);
+}
+
+/* ==============================
+   INPUTS
+   ============================== */
+.login-input {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-text-fill: #eef3ff;
+    -fx-prompt-text-fill: rgba(238, 243, 255, 0.55);
+
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-width: 1;
+
+    /* right padding leaves room for eye button */
+    -fx-padding: 10 46 10 12;
+    -fx-font-size: 14px;
+    -fx-font-family: "System";
+}
+
+.login-input:focused {
+    -fx-border-color: rgba(120, 210, 255, 0.55);
+    -fx-border-width: 1.2;
+    -fx-background-color: rgba(255, 255, 255, 0.13);
+}
+
+/* ComboBox text colors */
+.combo-box .list-cell {
+    -fx-text-fill: #eef3ff;
+}
+.combo-box-popup .list-view .list-cell {
+    -fx-text-fill: #1a1a1a;
+}
+
+/* Improve ComboBox background to match */
+.combo-box {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ==============================
+   PASSWORD WRAP + EYE (inside)
+   ============================== */
+.password-wrap {
+    -fx-background-color: transparent;
+}
+
+/* Make sure the eye floats on top-right of the StackPane */
+.password-wrap .eye-button {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+
+    -fx-min-width: 34;
+    -fx-min-height: 34;
+    -fx-pref-width: 34;
+    -fx-pref-height: 34;
+
+    -fx-text-fill: #eef3ff;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+
+    /* This positions it "inside" the right side */
+    -fx-translate-x: -8;
+}
+
+.password-wrap .eye-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ==============================
+   BUTTONS
+   ============================== */
+.primary-btn {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #22c55e);
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+    -fx-font-size: 14px;
+
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.30),
+            10, 0.20, 0, 4);
+}
+
+.primary-btn:hover {
+    -fx-opacity: 0.95;
+}
+
+.secondary-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-text-fill: #eef3ff;
+    -fx-font-weight: 800;
+    -fx-font-size: 14px;
+
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ==============================
+   TEXT / LINKS
+   ============================== */
+.label {
+    -fx-text-fill: rgba(238, 243, 255, 0.82);
+    -fx-font-size: 13px;
+    -fx-font-family: "System";
+}
+
+.hyperlink {
+    -fx-text-fill: #7dd3fc;
+    -fx-underline: true;
+    -fx-font-weight: 700;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #38bdf8;
+}
+
+.error-text {
+    -fx-text-fill: #fb7185;
+    -fx-font-weight: 800;
+    -fx-font-size: 13px;
+}

@@ -1,0 +1,62 @@
+.root {
+    -fx-font-family: "System";
+    -fx-background-color: #f6f7fb;
+}
+
+.title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 6 0;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #34495e;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* Inputs */
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #dfe6e9;
+    -fx-padding: 10 12;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(52,152,219,0.25), 10, 0.2, 0, 2);
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 10 14;
+}
+
+.button:hover {
+    -fx-background-color: #dfe6e9;
+}
+
+.btn-save {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.btn-save:hover {
+    -fx-background-color: #27ae60;
+}
+
+/* Status label */
+#statusLabel {
+    -fx-padding: 4 0 0 0;
+    -fx-font-size: 12px;
+}
