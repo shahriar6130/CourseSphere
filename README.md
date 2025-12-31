@@ -68,6 +68,9 @@ This project strongly emphasizes **OODP principles**, including:
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
+
+```text
 CourseSphere/
 ├── database/
 │   └── (text files for storing application data)
@@ -90,7 +93,6 @@ CourseSphere/
 │       │       ├── Request.java
 │       │       ├── ServerReadThread.java
 │       │       ├── ServerWriteThread.java
-│       │       │
 │       │       └── module-info.java
 │       │
 │       └── resources/
