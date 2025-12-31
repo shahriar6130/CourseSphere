@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="files.Controllers.AdminDashboardController"
+            styleClass="admin-root">
+
+    <stylesheets>
+        <URL value="@../../css/admin-dashboard.css"/>
+    </stylesheets>
+
+    <!-- ================= TOP HEADER ================= -->
+    <top>
+        <VBox styleClass="header-background" spacing="10">
+            <padding>
+                <Insets top="18" right="24" bottom="18" left="24"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Admin Dashboard" styleClass="header-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Course Management System • Administrator Panel" styleClass="header-subtitle"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="count-summary-bar">
+                <Label fx:id="ADstudentCountLabel" text="Students: 0" styleClass="count-label-student"/>
+                <Label fx:id="ADteacherCountLabel" text="Teachers: 0" styleClass="count-label-teacher"/>
+                <Label fx:id="ADcourseCountLabel" text="Courses: 0" styleClass="count-label-course"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- ================= CENTER (FULL PAGE SCROLL) ================= -->
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="scroll-pane-style">
+            <content>
+                <VBox spacing="14" styleClass="main-content-area">
+                    <padding>
+                        <Insets top="16" right="16" bottom="16" left="16"/>
+                    </padding>
+
+                    <!-- ========== ACTION BAR ========== -->
+                    <HBox spacing="12" alignment="CENTER" styleClass="action-bar">
+                        <padding>
+                            <Insets top="12" right="12" bottom="12" left="12"/>
+                        </padding>
+
+                        <!-- Top toolbar buttons now match your grey pill style -->
+                        <Button fx:id="ADaddStudentButton" text="Add Student" prefWidth="160"
+                                styleClass="toolbar-button"/>
+                        <Button fx:id="ADaddTeacherButton" text="Add Teacher" prefWidth="160"
+                                styleClass="toolbar-button"/>
+                        <!-- Active outline example -->
+                        <Button fx:id="ADaddCourseButton" text="Add Course" prefWidth="160"
+                                styleClass="toolbar-button"/>
+                        <Button fx:id="ADrefreshButton" text="Refresh" prefWidth="130"
+                                styleClass="toolbar-button"/>
+                        <Button fx:id="ADsignOutButton" text="Sign Out" prefWidth="130"
+                                styleClass="toolbar-button"/>
+                    </HBox>
+
+                    <!-- ========== GRID ========== -->
+                    <GridPane hgap="14" vgap="14">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="55" hgrow="ALWAYS"/>
+                            <ColumnConstraints percentWidth="45" hgrow="ALWAYS"/>
+                        </columnConstraints>
+
+                        <rowConstraints>
+                            <RowConstraints vgrow="ALWAYS"/>
+                            <RowConstraints vgrow="ALWAYS"/>
+                        </rowConstraints>
+
+                        <!-- ===== STUDENTS (LEFT TOP) ===== -->
+                        <VBox spacing="10" styleClass="data-section" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+                            <!-- Header row -->
+                            <GridPane hgap="10" vgap="0" alignment="CENTER_LEFT">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS"/>
+                                    <ColumnConstraints hgrow="NEVER"/>
+                                    <ColumnConstraints hgrow="NEVER"/>
+                                </columnConstraints>
+
+                                <Label text="Admitted Students:" styleClass="section-title"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="ADstudentSearchField" promptText="Search student..."
+                                           prefWidth="240" styleClass="search-field"
+                                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                                <Button fx:id="ADremoveStudentButton" text="Remove Student" prefWidth="160"
+                                        styleClass="remove-button"
+                                        GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            </GridPane>
+
+                            <TableView fx:id="ADstudentTable" VBox.vgrow="ALWAYS" prefHeight="360" styleClass="data-table">
+                                <columns>
+                                    <TableColumn fx:id="ADstudentNameColumn" text="Name" prefWidth="260"/>
+                                    <TableColumn fx:id="ADstudentIdColumn" text="Student ID" prefWidth="180"/>
+                                </columns>
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                </columnResizePolicy>
+                            </TableView>
+                        </VBox>
+
+                        <!-- ===== TEACHERS (LEFT BOTTOM) ===== -->
+                        <VBox spacing="10" styleClass="data-section" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+                            <GridPane hgap="10" vgap="0" alignment="CENTER_LEFT">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS"/>
+                                    <ColumnConstraints hgrow="NEVER"/>
+                                    <ColumnConstraints hgrow="NEVER"/>
+                                </columnConstraints>
+
+                                <Label text="Assigned Teachers" styleClass="section-title"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="ADteacherSearchField" promptText="Search teacher..."
+                                           prefWidth="240" styleClass="search-field"
+                                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                                <Button fx:id="ADassignTeacherButton" text="Assign Course" prefWidth="160"
+                                        styleClass="assign-button"
+                                        GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            </GridPane>
+
+                            <TableView fx:id="ADteacherTable" VBox.vgrow="ALWAYS" prefHeight="260" styleClass="data-table">
+                                <columns>
+                                    <TableColumn fx:id="ADteacherNameColumn" text="Name" prefWidth="260"/>
+                                    <TableColumn fx:id="ADteacherIdColumn" text="Teacher ID" prefWidth="180"/>
+                                </columns>
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                </columnResizePolicy>
+                            </TableView>
+                        </VBox>
+
+                        <!-- ===== COURSES (RIGHT spans both rows) ===== -->
+                        <VBox spacing="10" styleClass="data-section"
+                              GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.rowSpan="2">
+                            <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+                            <GridPane hgap="10" alignment="CENTER_LEFT">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS"/>
+                                    <ColumnConstraints hgrow="NEVER"/>
+                                    <ColumnConstraints hgrow="NEVER"/>
+                                </columnConstraints>
+
+                                <Label text="Courses:" styleClass="section-title"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+                                <TextField fx:id="ADcourseSearchField" promptText="Search course..."
+                                           prefWidth="220" styleClass="search-field"
+                                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                                <Button fx:id="ADremoveCourseButton" text="Remove Course" prefWidth="150"
+                                        styleClass="remove-button"
+                                        GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            </GridPane>
+
+                            <TableView fx:id="ADcourseTable" VBox.vgrow="ALWAYS" prefHeight="650" styleClass="data-table">
+                                <columns>
+                                    <TableColumn fx:id="ADcourseIDColumn" text="ID" prefWidth="90"/>
+                                    <TableColumn fx:id="ADcourseNameColumn" text="Course Name" prefWidth="260"/>
+                                    <TableColumn fx:id="ADcourseCreditColumn" text="Credit" prefWidth="80"/>
+                                </columns>
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                </columnResizePolicy>
+                            </TableView>
+                        </VBox>
+
+                    </GridPane>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="750.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="files.Controllers.AssignedCourses"
+            styleClass="teacher-dashboard-root">
+
+    <stylesheets>
+        <URL value="@../css/TeacherDashboard.css"/>
+    </stylesheets>
+
+    <!-- ===== TOP BAR ===== -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="top-bar">
+            <padding>
+                <Insets top="14" right="24" bottom="14" left="24"/>
+            </padding>
+
+            <Label text="Assigned Courses" styleClass="header-title"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="Course Management System - Teacher Panel"
+                   styleClass="subtitle-label"/>
+        </HBox>
+    </top>
+
+    <!-- ===== LEFT SIDEBAR ===== -->
+    <left>
+        <VBox spacing="14" styleClass="sidebar" prefWidth="240" fillWidth="true">
+            <padding>
+                <Insets top="22" right="16" bottom="22" left="16"/>
+            </padding>
+
+            <Text text="Menu" styleClass="sidebar-title"/>
+
+            <Button fx:id="backButton"
+                    text="🏠 Back"
+                    onAction="#onBack"
+                    styleClass="nav-button"
+                    maxWidth="Infinity"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- ✅ Logout now matches other sidebar buttons -->
+            <Button fx:id="logoutButton"
+                    text="← Logout"
+                    onAction="#onLogout"
+                    styleClass="nav-button danger"
+                    maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <!-- ===== CENTER CONTENT ===== -->
+    <center>
+        <VBox spacing="18" alignment="TOP_CENTER" styleClass="center-pane">
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
+
+            <!-- Header card -->
+            <VBox maxWidth="950" spacing="8" styleClass="card">
+                <Label fx:id="teacherNameLabel" text="Teacher: -" styleClass="welcome-label"/>
+                <Label text="Here are the courses assigned to you. Click a course to open its page."
+                       styleClass="muted-label"/>
+            </VBox>
+
+            <!-- List card -->
+            <VBox maxWidth="950" spacing="12" styleClass="card">
+                <Label text="Your Courses" styleClass="section-title"/>
+
+                <ScrollPane fx:id="coursesScroll"
+                            fitToWidth="true"
+                            prefHeight="520"
+                            styleClass="clean-scroll">
+                    <content>
+                        <VBox fx:id="courseVbox" spacing="12" styleClass="course-list-box">
+                            <padding>
+                                <Insets top="8" right="8" bottom="8" left="8"/>
+                            </padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

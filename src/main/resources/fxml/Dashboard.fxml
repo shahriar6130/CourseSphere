@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="750.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="files.Controllers.DashboardController"
+            stylesheets="@../css/dashboard.css">
+
+    <!-- ===== TOP BAR ===== -->
+    <top>
+        <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="12">
+            <padding>
+                <Insets top="16" right="18" bottom="16" left="18"/>
+            </padding>
+
+            <Label text="Student Dashboard" styleClass="topbar-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeText" text="Welcome" styleClass="topbar-subtitle"/>
+        </HBox>
+    </top>
+
+    <!-- ===== SIDEBAR ===== -->
+    <left>
+        <!-- ✅ fillWidth=true makes children stretch if possible -->
+        <VBox styleClass="sidebar" spacing="12" prefWidth="240" fillWidth="true">
+            <padding>
+                <Insets top="18" right="12" bottom="18" left="12"/>
+            </padding>
+
+            <Text text="Menu" styleClass="sidebar-title"/>
+
+            <!-- ✅ maxWidth=Infinity forces full width buttons -->
+            <Button fx:id="homeButton" text="🏠 Home" onAction="#onHome"
+                    styleClass="sidebar-btn" maxWidth="Infinity"/>
+
+            <Button fx:id="myCoursesButton" text="📚 My Courses" onAction="#onMyCourses"
+                    styleClass="sidebar-btn" maxWidth="Infinity"/>
+
+            <Button fx:id="addCourseButton" text="➕ Add Course" onAction="#onAddCourse"
+                    styleClass="sidebar-btn" maxWidth="Infinity"/>
+
+            <Button fx:id="editProfileButton" text="👤 Edit Profile" onAction="#onEditProfile"
+                    styleClass="sidebar-btn" maxWidth="Infinity"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- ✅ IMPORTANT: space-separated style classes, not comma -->
+            <Button fx:id="logoutButton" text="← Logout" onAction="#onLogout"
+                    styleClass="sidebar-btn danger" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <!-- ===== CENTER CONTENT ===== -->
+    <center>
+        <VBox styleClass="content" spacing="16" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="18" right="18" bottom="18" left="18"/>
+            </padding>
+
+            <!-- Profile Card -->
+            <HBox styleClass="card" spacing="18" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="16" right="16" bottom="16" left="16"/>
+                </padding>
+
+                <ImageView fx:id="profileImageView"
+                           fitHeight="90" fitWidth="90"
+                           pickOnBounds="true"
+                           preserveRatio="true"
+                           styleClass="avatar"/>
+
+                <VBox spacing="6">
+                    <Label text="Student Info" styleClass="card-title"/>
+                    <Label fx:id="nameLabel" text="-" styleClass="card-text"/>
+                    <Label fx:id="idLabel" text="-" styleClass="card-muted"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <!-- Tip Card -->
+            <VBox styleClass="banner" alignment="CENTER">
+                <Label text="Tip: Use Add Course to apply for new courses and track approvals."
+                       styleClass="banner-text" wrapText="true"/>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

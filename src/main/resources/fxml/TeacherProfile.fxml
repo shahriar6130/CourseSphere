@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="750.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="files.Controllers.TeacherProfileController"
+            styleClass="teacher-dashboard-root">
+
+    <stylesheets>
+        <URL value="@../css/TeacherDashboard.css"/>
+    </stylesheets>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_LEFT" styleClass="top-bar">
+            <padding>
+                <Insets top="14" right="24" bottom="14" left="24"/>
+            </padding>
+
+            <Label text="Teacher Dashboard" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="teacherNameTop" text="" styleClass="subtitle-label"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="14" styleClass="sidebar" prefWidth="240">
+            <padding>
+                <Insets top="22" right="16" bottom="22" left="16"/>
+            </padding>
+
+            <Label text="Menu" styleClass="sidebar-title"/>
+
+            <Button text="🏠 Home" onAction="#onHome" styleClass="nav-button"/>
+            <Button text="📚 Assigned Courses" onAction="#onCourses" styleClass="nav-button"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button text="← Logout" onAction="#onLogout" styleClass="action-button, red-button"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="clean-scroll">
+            <content>
+                <VBox spacing="18" styleClass="center-pane">
+                    <padding>
+                        <Insets top="28" right="28" bottom="28" left="28"/>
+                    </padding>
+
+                    <!-- Page title -->
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="Your Profile" styleClass="welcome-label"/>
+                    </HBox>
+
+                    <!-- Profile card -->
+                    <VBox spacing="14" styleClass="card" maxWidth="700">
+                        <Label text="Profile Details" styleClass="section-title"/>
+
+                        <GridPane hgap="14" vgap="14">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="160"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                            </columnConstraints>
+
+                            <Label text="Name" styleClass="muted-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <Label fx:id="nameValue" text="-" styleClass="section-title" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="User ID" styleClass="muted-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <Label fx:id="idValue" text="-" styleClass="section-title" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Total Courses" styleClass="muted-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <Label fx:id="courseCountValue" text="0" styleClass="section-title" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        </GridPane>
+
+                        <Separator/>
+
+                        <!-- EDIT PANEL (hidden by default) -->
+                        <VBox fx:id="editBox" spacing="10" managed="false" visible="false">
+                            <Label text="Edit Profile" styleClass="section-title"/>
+
+                            <GridPane hgap="14" vgap="12">
+                                <columnConstraints>
+                                    <ColumnConstraints prefWidth="160"/>
+                                    <ColumnConstraints hgrow="ALWAYS"/>
+                                </columnConstraints>
+
+                                <Label text="New Name" styleClass="muted-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="nameField" promptText="Enter new name"
+                                           GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="New Password" styleClass="muted-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <PasswordField fx:id="newPasswordField" promptText="New password"
+                                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Confirm Password" styleClass="muted-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <PasswordField fx:id="confirmPasswordField" promptText="Confirm password"
+                                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                            </GridPane>
+
+                            <Label fx:id="editStatusLabel" text="" wrapText="true"/>
+
+                            <HBox spacing="10" alignment="CENTER_RIGHT">
+                                <Button text="Cancel" onAction="#onCancelEdit" styleClass="action-button"/>
+                                <Button text="Save" onAction="#onSaveProfile" styleClass="action-button, green-button"/>
+                            </HBox>
+                        </VBox>
+
+                        <!-- ACTIONS -->
+                        <HBox spacing="12" alignment="CENTER_RIGHT">
+                            <Button text="Edit" onAction="#onEdit" styleClass="action-button"/>
+                            <Button text="Refresh" onAction="#refreshProfile" styleClass="action-button"/>
+                        </HBox>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

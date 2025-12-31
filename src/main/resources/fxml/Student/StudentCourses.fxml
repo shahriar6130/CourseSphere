@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="750.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="files.Controllers.StudentCoursesController"
+            styleClass="teacher-dashboard-root">
+
+    <stylesheets>
+        <URL value="@../../css/TeacherDashboard.css"/>
+    </stylesheets>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_LEFT" styleClass="top-bar">
+            <padding>
+                <Insets top="14" right="24" bottom="14" left="24"/>
+            </padding>
+
+            <Label text="Student Dashboard" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="studentTopLabel" text="" styleClass="subtitle-label"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="14" styleClass="sidebar" prefWidth="240">
+            <padding>
+                <Insets top="22" right="16" bottom="22" left="16"/>
+            </padding>
+
+            <Label text="Menu" styleClass="sidebar-title"/>
+
+            <Button fx:id="backButton"
+                    text="🏠 Back"
+                    onAction="#toDash"
+                    styleClass="nav-button"/>
+
+            <Button fx:id="refresh"
+                    text="⟳ Refresh"
+                    onAction="#onRefresh"
+                    styleClass="nav-button"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton"
+                    text="← Logout"
+                    onAction="#onLogout"
+                    styleClass="action-button, red-button"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="clean-scroll">
+            <content>
+                <VBox spacing="18" styleClass="center-pane">
+                    <padding>
+                        <Insets top="28" right="28" bottom="28" left="28"/>
+                    </padding>
+
+                    <!-- Header Card -->
+                    <VBox spacing="10" styleClass="card">
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Your Courses" styleClass="welcome-label"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button text="Refresh" onAction="#onRefresh" styleClass="action-button"/>
+                        </HBox>
+                        <Label text="Click a course to open the course page."
+                               styleClass="muted-label"/>
+                        <Label fx:id="statusLabel" text="" styleClass="muted-label"/>
+                    </VBox>
+
+                    <!-- Course List Card -->
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Enrolled Courses" styleClass="section-title"/>
+
+                        <ScrollPane fitToWidth="true" prefHeight="500" styleClass="clean-scroll">
+                            <content>
+                                <VBox fx:id="courseVbox" spacing="10">
+                                    <padding>
+                                        <Insets top="10" right="10" bottom="10" left="10"/>
+                                    </padding>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

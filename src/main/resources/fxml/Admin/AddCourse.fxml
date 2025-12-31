@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/23"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="files.Controllers.AddCourseController"
+      alignment="TOP_CENTER"
+      spacing="14.0"
+      styleClass="add-course-root">
+
+    <minWidth>560.0</minWidth>
+    <prefWidth>720.0</prefWidth>
+
+    <stylesheets>
+        <URL value="@../../css/admin-dashboard.css" />
+    </stylesheets>
+
+    <children>
+
+        <!-- Header -->
+        <VBox spacing="6" alignment="CENTER" styleClass="form-header">
+            <VBox.margin>
+                <Insets top="22" bottom="6"/>
+            </VBox.margin>
+
+            <Label text="Add New Course" styleClass="form-title"/>
+
+            <Label text="Fill in the course information below. Fields marked * are required."
+                   wrapText="true"
+                   styleClass="form-subtitle">
+                <VBox.margin>
+                    <Insets left="28" right="28"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+
+        <!-- Card -->
+        <VBox spacing="14.0" styleClass="form-card">
+            <padding>
+                <Insets top="18.0" right="20.0" bottom="18.0" left="20.0"/>
+            </padding>
+
+            <children>
+
+                <!-- Inputs -->
+                <GridPane hgap="16.0" vgap="16.0" styleClass="form-grid">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="140.0" hgrow="NEVER"/>
+                        <ColumnConstraints minWidth="380.0" hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <!-- Course ID -->
+                    <Label text="Course ID *"
+                           GridPane.columnIndex="0" GridPane.rowIndex="0"
+                           styleClass="form-label"/>
+
+                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" spacing="6">
+                        <TextField fx:id="courseIdField"
+                                   promptText="e.g., CSE2103"
+                                   styleClass="form-text-field"/>
+                        <Label text="Tip: Keep it unique (e.g., CSE2103, MAT1101)"
+                               styleClass="help-text"/>
+                    </VBox>
+
+                    <!-- Course Name -->
+                    <Label text="Course Name *"
+                           GridPane.columnIndex="0" GridPane.rowIndex="1"
+                           styleClass="form-label"/>
+
+                    <TextField fx:id="courseNameField"
+                               promptText="e.g., Object Oriented Programming"
+                               GridPane.columnIndex="1" GridPane.rowIndex="1"
+                               styleClass="form-text-field"/>
+
+                    <!-- Credit Hours -->
+                    <Label text="Credit Hours *"
+                           GridPane.columnIndex="0" GridPane.rowIndex="2"
+                           styleClass="form-label"/>
+
+                    <ComboBox fx:id="courseCreditCombo"
+                              promptText="Select credit hours"
+                              GridPane.columnIndex="1" GridPane.rowIndex="2"
+                              styleClass="form-combo"/>
+
+                    <!-- Description -->
+                    <Label text="Description"
+                           GridPane.columnIndex="0" GridPane.rowIndex="3"
+                           styleClass="form-label"/>
+
+                    <TextArea fx:id="courseDescriptionArea"
+                              promptText="Optional: Add a short course description"
+                              prefRowCount="5"
+                              wrapText="true"
+                              GridPane.columnIndex="1" GridPane.rowIndex="3"
+                              styleClass="form-text-area"/>
+                </GridPane>
+
+                <Separator styleClass="form-separator"/>
+
+                <!-- Status -->
+                <Label fx:id="statusLabel"
+                       wrapText="true"
+                       styleClass="status-label"/>
+
+                <!-- Buttons -->
+                <HBox spacing="12.0" alignment="CENTER_RIGHT" styleClass="form-actions">
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Button fx:id="cancelButton"
+                            cancelButton="true"
+                            prefWidth="120.0"
+                            text="Cancel"
+                            styleClass="pill-button pill-neutral"/>
+
+                    <Button fx:id="removeCourseButton"
+                            prefWidth="150.0"
+                            text="Remove Course"
+                            styleClass="pill-button pill-danger"/>
+
+                    <Button fx:id="addCourseButton"
+                            defaultButton="true"
+                            prefWidth="150.0"
+                            text="Add Course"
+                            styleClass="pill-button pill-primary"/>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- Footer note -->
+        <Label text="Note: Course will be saved to database/Courses.txt"
+               styleClass="footer-note">
+            <VBox.margin>
+                <Insets top="2.0" bottom="18.0"/>
+            </VBox.margin>
+        </Label>
+
+    </children>
+</VBox>

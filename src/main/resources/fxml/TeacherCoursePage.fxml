@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="750.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="files.Controllers.TeacherCoursePage"
+            styleClass="teacher-dashboard-root">
+
+    <stylesheets>
+        <URL value="@../css/TeacherDashboard.css"/>
+    </stylesheets>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_LEFT" styleClass="top-bar">
+            <padding>
+                <Insets top="14" right="24" bottom="14" left="24"/>
+            </padding>
+
+            <Label text="Teacher Dashboard" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="Name" text="" styleClass="subtitle-label"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="14" styleClass="sidebar" prefWidth="240">
+            <padding>
+                <Insets top="22" right="16" bottom="22" left="16"/>
+            </padding>
+
+            <Label text="Menu" styleClass="sidebar-title"/>
+
+            <Button fx:id="homeButton" text="🏠 Home"
+                    onAction="#onHomeClicked"
+                    styleClass="nav-button"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton" text="← Logout"
+                    onAction="#onLogout"
+                    styleClass="action-button, red-button"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="clean-scroll">
+            <content>
+                <VBox spacing="18" styleClass="center-pane">
+                    <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+
+                    <!-- COURSE HEADER CARD -->
+                    <VBox spacing="10" styleClass="card">
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label fx:id="welcomeLabel" text="Course" styleClass="welcome-label"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button text="Refresh" onAction="#refreshAll" styleClass="action-button"/>
+                        </HBox>
+                        <Label text="Manage announcements, files, participants and deadlines from here."
+                               styleClass="muted-label"/>
+                    </VBox>
+
+                    <!-- PARTICIPANTS CARD -->
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Participants" styleClass="section-title"/>
+                        <TableView fx:id="participantsTable" prefHeight="220" styleClass="data-table">
+                            <columns>
+                                <TableColumn fx:id="studentIdColumn" text="Student ID" prefWidth="180"/>
+                                <TableColumn fx:id="studentNameColumn" text="Student Name" prefWidth="600"/>
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
+                        </TableView>
+                    </VBox>
+
+                    <!-- ANNOUNCEMENTS CARD -->
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Announcements" styleClass="section-title"/>
+
+                        <VBox fx:id="announcementBox" spacing="8"/>
+
+                        <Separator/>
+
+                        <Label text="Post Announcement" styleClass="section-title"/>
+                        <TextArea fx:id="t" promptText="Write your announcement here" prefHeight="90"/>
+
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Button fx:id="post" text="Post"
+                                    onAction="#onPost"
+                                    styleClass="action-button, green-button"/>
+
+                            <Button fx:id="filePost" text="Choose File"
+                                    onAction="#onFilepost"
+                                    styleClass="action-button"/>
+
+                            <Label fx:id="attachedFileName" text="No file selected" styleClass="muted-label"/>
+                        </HBox>
+                    </VBox>
+
+                    <!-- FILES CARD -->
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Uploaded Files" styleClass="section-title"/>
+
+                        <VBox fx:id="uploadedFilesBox" spacing="10"/>
+
+                        <Label fx:id="filesStatusLabel" text="" styleClass="muted-label"/>
+                    </VBox>
+
+                    <!-- DEADLINE CARD -->
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Upload Deadline" styleClass="section-title"/>
+
+                        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="deadline-row">
+                            <TextField fx:id="taskField" promptText="Task Name (e.g. Assignment 1)" HBox.hgrow="ALWAYS"/>
+                            <ComboBox fx:id="typeBox" promptText="Select Type" prefWidth="200"/>
+                            <DatePicker fx:id="dueDatePicker" prefWidth="180"/>
+                            <Button text="Upload"
+                                    onAction="#uploadDeadline"
+                                    styleClass="action-button, green-button"/>
+                        </HBox>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

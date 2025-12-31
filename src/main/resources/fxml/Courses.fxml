@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="750.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="files.Controllers.CoursesController"
+            styleClass="teacher-dashboard-root">
+
+    <stylesheets>
+        <URL value="@../css/TeacherDashboard.css"/>
+    </stylesheets>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_LEFT" styleClass="top-bar">
+            <padding>
+                <Insets top="14" right="24" bottom="14" left="24"/>
+            </padding>
+
+            <Label text="All Courses" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="studentTopLabel" text="" styleClass="subtitle-label"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="14" styleClass="sidebar" prefWidth="240">
+            <padding>
+                <Insets top="22" right="16" bottom="22" left="16"/>
+            </padding>
+
+            <Label text="Menu" styleClass="sidebar-title"/>
+
+            <Button fx:id="backButton" text="🏠 Back"
+                    onAction="#onBack"
+                    styleClass="nav-button"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logout" text="← Logout"
+                    onAction="#onLogout"
+                    styleClass="action-button, red-button"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="clean-scroll">
+            <content>
+                <VBox spacing="18" styleClass="center-pane">
+                    <padding>
+                        <!-- ✅ FIX: must be Insets node, NOT padding="25" -->
+                        <Insets top="28" right="28" bottom="28" left="28"/>
+                    </padding>
+
+                    <!-- FILTER CARD -->
+                    <VBox spacing="12" styleClass="card">
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Label text="Search &amp; Filter" styleClass="section-title"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Button text="Refresh" onAction="#refreshAll" styleClass="action-button"/>
+                        </HBox>
+
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <ComboBox fx:id="filterBox" promptText="Filter by Dept" prefWidth="200"/>
+                            <TextField fx:id="SearchBox" promptText="Search by course id or name..." HBox.hgrow="ALWAYS"/>
+                            <Button text="Clear" onAction="#onClearFilters" styleClass="action-button"/>
+                        </HBox>
+
+                        <Label fx:id="statusLabel" text="" styleClass="muted-label"/>
+                    </VBox>
+
+                    <!-- COURSES LIST CARD -->
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Available Courses" styleClass="section-title"/>
+
+                        <ScrollPane fitToWidth="true" prefHeight="520" styleClass="clean-scroll">
+                            <content>
+                                <VBox fx:id="allCourseVbox" spacing="12" styleClass="course-list-box">
+                                    <padding>
+                                        <Insets top="8" right="4" bottom="8" left="4"/>
+                                    </padding>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

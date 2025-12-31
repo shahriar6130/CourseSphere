@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600" prefWidth="800"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="files.Controllers.ProfileController">
+
+    <!-- ===== TOP BAR ===== -->
+    <HBox alignment="CENTER" prefHeight="90" prefWidth="800"
+          style="-fx-background-color:#2c3e50;">
+        <Text text="Your Profile" fill="white"
+              style="-fx-font-size:28px;-fx-font-weight:bold;"/>
+    </HBox>
+
+    <!-- ===== SIDEBAR ===== -->
+    <VBox layoutY="90" prefWidth="150" spacing="20"
+          style="-fx-background-color:#34495e;">
+        <padding><Insets top="20" left="15" right="15"/></padding>
+
+        <Button text="🏠 Home" onAction="#onHome"/>
+        <Button text="← Logout" onAction="#onLogout"/>
+    </VBox>
+
+    <!-- ===== PROFILE CARD ===== -->
+    <VBox layoutX="200" layoutY="140" spacing="15">
+
+        <ImageView fx:id="profileImage" fitHeight="150" fitWidth="150">
+            <image>
+                <Image url="@../../default%20pp.jpg"/>
+            </image>
+        </ImageView>
+
+        <Label fx:id="clockLabel"
+               style="-fx-font-size:24px;-fx-font-weight:bold;"/>
+
+        <HBox spacing="8">
+            <Label text="👤 Name:"/>
+            <Label fx:id="nameLabel"/>
+        </HBox>
+
+        <HBox spacing="8">
+            <Label text="🆔 ID:"/>
+            <Label fx:id="idLabel"/>
+        </HBox>
+
+        <HBox spacing="8">
+            <Label text="📚 Courses:"/>
+            <Label fx:id="courseCountLabel"/>
+        </HBox>
+
+        <Button fx:id="editProfileButton"
+                text="Edit Profile"
+                onAction="#onEditProfile"
+                style="-fx-background-color:#f39c12;-fx-text-fill:white;"/>
+    </VBox>
+
+</AnchorPane>
