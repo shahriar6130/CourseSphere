@@ -4,8 +4,6 @@ CourseSphere is a **JavaFX-based Course Management System** developed as part of
 
 The project demonstrates the practical application of **object-oriented principles**, **JavaFX-based UI design**, **file handling**, and **client–server communication concepts** within a structured academic system.
 
----
-
 ## 📌 Project Overview
 
 CourseSphere is designed to manage academic courses with **role-based access control** for different users.  
@@ -16,8 +14,6 @@ The application focuses on:
 - Modular architecture
 - User-friendly UI
 - Maintainable and scalable code structure
-
----
 
 ## 👥 User Roles & Features
 
@@ -39,8 +35,6 @@ The application focuses on:
 - Apply for courses
 - View application status
 
----
-
 ## ⚙️ Technologies Used
 
 - **Java (JDK 21)**
@@ -52,7 +46,7 @@ The application focuses on:
 - **Socket Programming (LAN-based communication – if applicable)**
 - **Git & GitHub (Version Control)**
 
----
+## Executable file: https://github.com/shahriar6130/CourseSphere/releases/download/v1.0.0/CourseSphere.exe
 
 ## 🧠 Object-Oriented Concepts Applied
 
@@ -64,7 +58,6 @@ This project strongly emphasizes **OODP principles**, including:
 - **Polymorphism** – Method overriding and dynamic behavior  
 - **Modular Design** – Separate controllers, models, views, and utilities  
 
----
 ## 📁 Project Structure
 
 ```text
@@ -108,9 +101,6 @@ CourseSphere/
 ├── mvnw
 ├── mvnw.cmd
 └── README.md
-
-
----
 
 ## ▶️ How to Run the Project
 
