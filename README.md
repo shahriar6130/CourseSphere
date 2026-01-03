@@ -1,6 +1,6 @@
 # CourseSphere
 
-CourseSphere is a **JavaFX-based Course Management System** developed as part of the **Object-Oriented Design & Programming (OODP) Sessional – Course 2104**.
+CourseSphere is a **JavaFX-based Course Management System** developed as part of the **Object-Oriented Design & Programming (OODP) lab – Course 2104**.
 
 The project demonstrates the practical application of **object-oriented principles**, **JavaFX-based UI design**, **file handling**, and **client–server communication concepts** within a structured academic system.
 
@@ -88,7 +88,7 @@ CourseSphere/
 │       └── resources/
 │           ├── fxml/
 │           ├── css/
-│           └── images/
+│           └── images(all image)
 │
 ├── uploaded_files/
 │   └── (runtime user uploads – ignored by Git)
@@ -104,7 +104,6 @@ CourseSphere/
 
 ## ▶️ How to Run the Project
 
-### Prerequisites
 - **Java JDK 21**
 - **Maven**
 - **IntelliJ IDEA** (recommended)
