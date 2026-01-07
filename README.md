@@ -109,7 +109,4 @@ CourseSphere/
 - **IntelliJ IDEA** (recommended)
 - **JavaFX version 23/24**
 
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/shahriar6130/CourseSphere.git
+## Clone the repository: git clone https://github.com/shahriar6130/CourseSphere.git
