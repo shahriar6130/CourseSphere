@@ -126,11 +126,6 @@
                             text="Cancel"
                             styleClass="pill-button pill-neutral"/>
 
-                    <Button fx:id="removeCourseButton"
-                            prefWidth="150.0"
-                            text="Remove Course"
-                            styleClass="pill-button pill-danger"/>
-
                     <Button fx:id="addCourseButton"
                             defaultButton="true"
                             prefWidth="150.0"
